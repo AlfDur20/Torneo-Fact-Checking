@@ -1,0 +1,8 @@
+# Training dependencies (in addition to requirements.txt)
+kagglehub==0.2.9
+pandas==2.2.2
+scikit-learn==1.5.0
+datasets==2.20.0
+accelerate==0.31.0
+evaluate==0.4.2
+tqdm==4.66.4

@@ -1,0 +1,16 @@
+.git
+.gitignore
+*.md
+tests/
+requirements-train.txt
+train.py
+azure/
+docker-compose.yml
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+env/
+.env
