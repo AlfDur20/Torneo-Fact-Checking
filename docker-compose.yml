@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fact-checking-api:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the trained model directory so the image can be built without it.
+      # Remove this volume if the model is embedded in the image.
+      - ./model:/app/model:ro
+    environment:
+      - MODEL_DIR=/app/model
+      - MAX_LENGTH=256
+      # Set DEVICE=cuda to use a GPU (requires nvidia-docker)
+      # - DEVICE=cuda
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped

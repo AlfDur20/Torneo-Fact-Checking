@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.env
+.venv/
+venv/
+env/
+
+# Training artefacts
+model/
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+# Kaggle cache
+~/.cache/kagglehub/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker
+.dockerenv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
